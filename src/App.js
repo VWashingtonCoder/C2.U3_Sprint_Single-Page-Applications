@@ -3,17 +3,32 @@ import axios from "axios";
 import { Route, Link, Switch } from "react-router-dom";
 //components
 import Home from "./components/Home"
+import styled from "styled-components";
 
+const StyledNav = styled.nav`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  h1{
+    font-size:2.5rem
+  }
+  div{
+    display:flex;
+    flex-flow: column wrap;
+    font-size: 20px;
+  }
+  
+`
 const App = () => {
   return (
     <div className="App">
-      <nav>
+      <StyledNav>
         <h1 className="store-header">Lambda Eats</h1>
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/pizza">Order</Link>
         </div>
-      </nav>
+      </StyledNav>
           
       <Switch>
         {/* <Route path={"/pizza"}>
