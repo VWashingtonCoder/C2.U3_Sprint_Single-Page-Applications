@@ -28,11 +28,6 @@ export default function OrderForm(props) {
             <div className="form-group errors">
                 <div className="txtName">{errors.name}</div>
                 <div className="ddSize">{errors.size}</div>
-                <div className="cbBeef">{errors.beef}</div>
-                <div className="cbChicken">{errors.chicken}</div>
-                <div className="cbPeppers">{errors.peppers}</div>
-                <div className="cbPineapple">{errors.pineapple}</div>
-                <div className="cbCheese">{errors.cheese}</div>
             </div>
             <div className="form-group inputs">
                 <div className="form group text-name">
