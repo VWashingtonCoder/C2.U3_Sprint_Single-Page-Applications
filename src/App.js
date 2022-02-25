@@ -1,31 +1,29 @@
 import React from "react";
+import axios from "axios";
+import { Route, Link, Switch } from "react-router-dom";
+//components
+import Home from "./components/Home"
 
 const App = () => {
   return (
-    <>
-      <div id="container-header">
-        <h1>Lambda Eats</h1>
-        {/* <link>Home</link>
-        <link>PizzaOrder</link> */}
-      </div>
-      
-      <div id="container-image">
-        {/* img of pizza */}
-        <p>Where Coders Are Our Key Customers</p>
-      </div>
-
-      <div id="container-pizzaText">
-        <p>We know how hard it can be after a long session of coding.Let's be honest...you're normally starving but the last thing you want to do is cook. Well let us cater to you! Our amazing pizzas and toppings were picked specifically with coders in mind. So send us an order below</p>
-      </div>
-
-      <div id="container-order">
-        <button>Order Pizza</button>
-      </div>
-
-      <div id="container-footer">
-        {/* <link>Back to the Top</link> */}
-      </div>
-    </>
+    <div className="App">
+      <nav>
+        <h1 className="store-header">Lambda Eats</h1>
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/pizza">Order</Link>
+        </div>
+      </nav>
+          
+      <Switch>
+        {/* <Route path={"/pizza"}>
+          {/* <OrderForm></OrderForm> */}
+        {/* </Route>  */}
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </div>
   );
 };
 export default App;
