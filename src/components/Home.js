@@ -26,7 +26,7 @@ export default function Home () {
             </p>
             <button 
                 onClick={routeToForm}
-                className='orderBtn'
+                id="order-pizza"
             >
                 Order Now!
             </button>

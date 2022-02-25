@@ -1,9 +1,11 @@
 import React from "react";
 import axios from "axios";
 import { Route, Link, Switch } from "react-router-dom";
+import styled from "styled-components";
 //components
 import Home from "./components/Home"
-import styled from "styled-components";
+import OrderForm from "./components/OrderForm";
+
 
 const StyledNav = styled.nav`
   display: flex;
@@ -31,9 +33,9 @@ const App = () => {
       </StyledNav>
           
       <Switch>
-        {/* <Route path={"/pizza"}>
-          {/* <OrderForm></OrderForm> */}
-        {/* </Route>  */}
+        <Route path={"/pizza"}>
+          <OrderForm></OrderForm>
+        </Route> 
         <Route path="/">
           <Home />
         </Route>
