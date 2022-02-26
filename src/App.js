@@ -1,28 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
-import styled from "styled-components";
-import * as yup from "yup"
+import { StyledNav } from "./components/themes/Themes";
 //components
 import Home from "./components/Home"
-import OrderForm from "./components/OrderForm";
+import OrderFormApp from "./components/OrderFormApp";
 
-const StyledNav = styled.nav`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  h1{
-    font-size:2.5rem
-  }
-  div{
-    display:flex;
-    flex-flow: column wrap;
-    font-size: 20px;
-  }
-  
-`
 const App = () => {
-  
   return (
     <div className="App">
       <StyledNav>
@@ -34,13 +17,11 @@ const App = () => {
       </StyledNav>
           
       <Switch>
-        <Route path={"/pizza"}>
-          <OrderForm></OrderForm>
-        </Route> 
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+        <Route exact path="/" component={Home} />
+
+        <Route path="/pizza" component={OrderFormApp}/> 
+      </Switch> 
+      
     </div>
   );
 };

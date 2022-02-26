@@ -1,4 +1,6 @@
 import React from "react";
+import {Link, useRouteMatch} from "react-router-dom"
+
 
 export default function OrderForm(props) {
     const{
@@ -8,6 +10,7 @@ export default function OrderForm(props) {
         disabled,
         errors,
     } = props
+    const { url } = useRouteMatch();
 
     const onSubmit = evt => {
         evt.preventDefault();
@@ -112,7 +115,9 @@ export default function OrderForm(props) {
                     </label>
                 </div>
                 <div className="form-group submit">
-                    <button id="order-button" disabled={disabled}>Add to Order</button>
+                    <Link to={`${url}/order`}>
+                        <button id="order-button" disabled={disabled}>Add to Order</button>
+                    </Link>
                 </div>
             </div>
         </form>
