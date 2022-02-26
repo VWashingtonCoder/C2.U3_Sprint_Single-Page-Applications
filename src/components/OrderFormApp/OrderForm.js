@@ -10,6 +10,7 @@ export default function OrderForm(props) {
         disabled,
         errors,
     } = props
+    
     const { url } = useRouteMatch();
 
     const onSubmit = evt => {
@@ -108,16 +109,14 @@ export default function OrderForm(props) {
                         <input
                             value={values.special}
                             onChange={onChange}
-                            name = "name"
+                            name = "special"
                             type = "text"
                             id = "special-text"
                         />
                     </label>
                 </div>
                 <div className="form-group submit">
-                    <Link to={`${url}/order`}>
-                        <button id="order-button" disabled={disabled}>Add to Order</button>
-                    </Link>
+                    <button id="order-button" disabled={disabled}>Add to Order</button>
                 </div>
             </div>
         </form>

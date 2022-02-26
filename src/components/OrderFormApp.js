@@ -17,7 +17,6 @@ function OrderFormApp(){
   const postNewOrder = newOrder => {
     axios.post("https://reqres.in/api/orders", newOrder)
     .then(res => {
-      console.log(res);
       setOrderInfo(res.data, ...orderInfo)
       setFormValues(initialFormValues);
     })
@@ -27,7 +26,7 @@ function OrderFormApp(){
   const validate = (name, value) => {
     yup.reach(formSchema, name)
     .validate(value)
-    .then(() => setFormErrors({...setFormErrors, [name]: ""}))
+    .then(() => setFormErrors({...formErrors, [name]: ""}))
     .catch(err => setFormErrors({...formErrors, [name]: err.errors[0]}))
   }
   
@@ -62,6 +61,7 @@ function OrderFormApp(){
           disabled={disabled}
           errors={formErrors}
         />
+      
       </div>
   )
 };
