@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import axios from "axios";
+import styled from "styled-components";
 //components
 import Order from "./OrderFormApp/Order"
 import OrderForm from "./OrderFormApp/OrderForm"
 import formSchema from "./OrderFormApp/FormSchema"
 import { initialFormValues, initialFormErrors, initialOrder, initialDisabled } from "./OrderFormApp/Data" 
+
+
+const StyledOrder = styled.div`
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    text-align: center;
+    line-height: 2rem;
+`
+
 
 function OrderFormApp(){
   /* States */
@@ -54,7 +65,7 @@ function OrderFormApp(){
    
 
   return(
-      <div className="container-pizza">
+      <StyledOrder className="container-pizza">
         <OrderForm
           id="pizza-form"
           values={formValues}
@@ -66,7 +77,7 @@ function OrderFormApp(){
         {orderInfo === initialOrder ? 
           <h3>Push Us Your Order!</h3> : <Order props={orderInfo} />       
         }
-      </div>
+      </StyledOrder>
   )
 };
 
