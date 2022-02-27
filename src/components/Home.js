@@ -1,15 +1,8 @@
 import React from "react"
 import { useHistory } from "react-router-dom";
-import styled from "styled-components";
+import { StyledHome } from "./themes/Themes";
+import pizzaSlices from "../images/pizzaSlices.jpg"
 
-const StyledHome = styled.div`
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    text-align: center;
-    margin: 1rem;
-    padding: 5px;
-` 
 
 export default function Home () {
     const history = useHistory();
@@ -30,6 +23,10 @@ export default function Home () {
             >
                 Order Now!
             </button>
+            <img
+                src= {pizzaSlices}
+                alt="pizza-slices"
+            />
         </StyledHome>
     )
 }

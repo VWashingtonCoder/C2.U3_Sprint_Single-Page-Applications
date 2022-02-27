@@ -1,9 +1,10 @@
 import React from "react";
+import { StyledOrder } from "../themes/Themes";
 
 export default function Order ({props}) {
     console.log(props)
     return (
-        <div className="container-order">
+        <StyledOrder className="container-order">
             <h2>Order Commited And Pushed</h2>
             <p>Name: {props.name}</p>
             <p>Pizza Size: {props.size}</p>
@@ -25,6 +26,6 @@ export default function Order ({props}) {
                 {props.special === "" ?
                 " None" : props.special}
             </p>
-        </div>
+        </StyledOrder>
     )
 }

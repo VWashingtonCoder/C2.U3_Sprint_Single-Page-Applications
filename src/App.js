@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
-import { StyledNav } from "./components/themes/Themes";
+import { StyledNav, StyledApp } from "./components/themes/Themes";
 //components
 import Home from "./components/Home"
 import OrderFormApp from "./components/OrderFormApp";
 
 const App = () => {
   return (
-    <div className="App">
+    <StyledApp className="App">
       <StyledNav>
         <h1 className="store-header">Lambda Eats</h1>
         <div className="nav-links">
@@ -23,7 +23,7 @@ const App = () => {
 
       </Switch> 
       
-    </div>
+    </StyledApp>
   );
 };
 export default App;

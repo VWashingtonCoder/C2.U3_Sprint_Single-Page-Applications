@@ -23,7 +23,7 @@ export default function OrderForm(props) {
         <form id="pizza-form" onSubmit={onSubmit}>
             <div className="form-group header">
                 <h2>It's Pizza Building Time</h2>
-                <p>Fill out your order below</p>
+                <h3>Fill out your order below</h3>
             </div>
             <div className="form-group errors">
                 <div className="txtName">{errors.name}</div>
@@ -31,7 +31,7 @@ export default function OrderForm(props) {
             </div>
             <div className="form-group inputs">
                 <div className="form group text-name">
-                    <label> Your Name: 
+                    <label> Your Name<br/>      
                         <input
                             value={values.name}
                             onChange={onChange}
@@ -42,7 +42,8 @@ export default function OrderForm(props) {
                     </label>
                 </div>
                 <div className="form group dropdown">
-                    <label> Pizza Size
+                    <br/>
+                    <label> Pizza Size <br/>
                         <select
                             onChange = {onChange}
                             value = {values.size}
@@ -58,7 +59,7 @@ export default function OrderForm(props) {
                     </label>
                 </div>
                 <div className="form group checklist">
-                    <h3>Pick Your Toppings</h3>
+                    <h4>Pick Your Toppings</h4>
                     <label> Beef 
                         <input
                             type = "checkbox"
@@ -101,7 +102,7 @@ export default function OrderForm(props) {
                     </label>
                 </div>
                 <div className="form group text-special">
-                    <label> Any Additional Special Requests:  
+                    <label><br/> Any Additional Special Requests:<br/>  
                         <input
                             value={values.special}
                             onChange={onChange}
