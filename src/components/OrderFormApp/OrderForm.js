@@ -58,7 +58,7 @@ export default function OrderForm(props) {
                         </select>
                     </label>
                 </div>
-                <div className="form group checklist">
+                <div className="form group checklist" id="checks">
                     <h4>Pick Your Toppings</h4>
                     <label> Beef 
                         <input
