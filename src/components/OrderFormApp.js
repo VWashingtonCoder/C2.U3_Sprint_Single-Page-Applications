@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import axios from "axios";
 //components
-// import Order from "./OrderFormApp/Order"
+import Order from "./OrderFormApp/Order"
 import OrderForm from "./OrderFormApp/OrderForm"
 import formSchema from "./OrderFormApp/FormSchema"
 import { initialFormValues, initialFormErrors, initialOrder, initialDisabled } from "./OrderFormApp/Data" 
@@ -51,6 +51,8 @@ function OrderFormApp(){
       formSchema.isValid(formValues).then(valid=> setDisabled(!valid))
     }, [formValues])
 
+   
+
   return(
       <div className="container-pizza">
         <OrderForm
@@ -61,7 +63,9 @@ function OrderFormApp(){
           disabled={disabled}
           errors={formErrors}
         />
-      
+        {orderInfo === initialOrder ? 
+          <h3>Push Us Your Order!</h3> : <Order props={orderInfo} />       
+        }
       </div>
   )
 };
